@@ -6,7 +6,7 @@ wykorzystuje metodę Gaussa.
 ## Wymagania konieczne do prawidłowego działania wtyczki 
 System operacyjny i programy:
 * oprogramowanie Windows 10 
-* QGIS 3.28.3
+* QGIS 3.22.3
 
 Sposób sformatowana i przekazania danych:
 * W celu wykonania obliczeń należy przekazać programowi plik w formacie .csv zawierający współrzędne punktów 
