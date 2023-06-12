@@ -29,10 +29,7 @@ from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 from qgis.utils import iface 
 import numpy as np
-<<<<<<< HEAD
-=======
 
->>>>>>> e541246a10ef899ba118be8df4111a231fef8f7f
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'wtyczka_1_dialog_base.ui'))
@@ -49,14 +46,10 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
         self.pushButton_roznicawys.clicked.connect(self.roznica_wys)
-<<<<<<< HEAD
-        self.pushButton_2_polepow.clicked.connect(self.pole)
 
-=======
-        self.pushButton_polepow.clicked.connect(self.pole)
+        self.pushButton_2_polepow.clicked.connect(self.pole)
   
        
->>>>>>> e541246a10ef899ba118be8df4111a231fef8f7f
     def roznica_wys(self):
         wybrana_warstwa = self.mMapLayerComboBox.currentLayer()
         liczba_punktow = len(wybrana_warstwa.selectedFeatures())
@@ -72,13 +65,13 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                 wysokosci.append(wysokosc)
                 numery.append(numer)
         
-<<<<<<< HEAD
+
             przewyzszenie = wysokosci[1] - wysokosci[0]
             self.label_2_wynik.setText(f'Przewyższenie między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
-=======
+
             roznica = wysokosci[1] - wysokosci[0]
             self.label_2_wynik.setText(f'Różnica wysokosci między punktami:\n {numery[0]} i {numery[1]} wynosi\n {roznica:.3f} m')
->>>>>>> e541246a10ef899ba118be8df4111a231fef8f7f
+
         else:
             self.label_2_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
 
