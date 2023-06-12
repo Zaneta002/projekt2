@@ -27,7 +27,7 @@ import os
 
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
-from qgis.utils import iface 
+#from qgis.utils import iface 
 import numpy as np
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
@@ -47,7 +47,8 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
         self.setupUi(self)
         self.pushButton_roznicawys.clicked.connect(self.roznica_wys)
         self.pushButton_polepow.clicked.connect(self.pole)
-
+  
+       
     def roznica_wys(self):
         wybrana_warstwa = self.mMapLayerComboBox_warstwa.currentLayer()
         liczba_punktow = len(wybrana_warstwa.selectedFeatures())
@@ -63,10 +64,10 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                 wysokosci.append(wysokosc)
                 numery.append(numer)
         
-            przewyzszenie = wysokosci[1] - wysokosci[0]
-            self.label_wynik.setText(f'Różnica wysokosci między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
+            roznica = wysokosci[1] - wysokosci[0]
+            self.label_2_wynik.setText(f'Różnica wysokosci między punktami:\n {numery[0]} i {numery[1]} wynosi\n {roznica:.3f} m')
         else:
-            self.label_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
+            self.label_2_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
 
     def pole(self):
         wybrana_warstwa = self.mMapLayerComboBox_warstwa.currentLayer()
@@ -98,6 +99,6 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
             
                 pole = 0.5 * np.abs(np.dot(X, np.roll(Y, 1)) - np.dot(Y, np.roll(X, 1)))
                 numery_punktow = ' '.join(str(nr) for nr in numery)
-                self.label_wynik.setText(f'Pole powierzchni między punktami\n {numery_punktow} wynosi:\n {pole:.3f} m^2')
+                self.label_2_wynik.setText(f'Pole powierzchni między punktami\n {numery_punktow} wynosi:\n {pole:.3f} m^2')
             else:
-                self.label_wynik.setText('Błąd: Nie wybrano wystarczającej liczby punktów.')
+                self.label_2_wynik.setText('Błąd: Nie wybrano wystarczającej liczby punktów.')
