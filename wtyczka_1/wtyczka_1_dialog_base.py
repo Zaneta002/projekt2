@@ -14,12 +14,18 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_wtyczka1DialogBase(object):
     def setupUi(self, wtyczka1DialogBase):
         wtyczka1DialogBase.setObjectName("wtyczka1DialogBase")
-        wtyczka1DialogBase.resize(400, 300)
+        wtyczka1DialogBase.resize(564, 491)
         self.button_box = QtWidgets.QDialogButtonBox(wtyczka1DialogBase)
-        self.button_box.setGeometry(QtCore.QRect(30, 240, 341, 32))
+        self.button_box.setGeometry(QtCore.QRect(190, 420, 341, 32))
         self.button_box.setOrientation(QtCore.Qt.Horizontal)
         self.button_box.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.button_box.setObjectName("button_box")
+        self.mMapLayerComboBox = QgsMapLayerComboBox(wtyczka1DialogBase)
+        self.mMapLayerComboBox.setGeometry(QtCore.QRect(70, 90, 281, 31))
+        self.mMapLayerComboBox.setObjectName("mMapLayerComboBox")
+        self.label = QtWidgets.QLabel(wtyczka1DialogBase)
+        self.label.setGeometry(QtCore.QRect(70, 60, 161, 16))
+        self.label.setObjectName("label")
 
         self.retranslateUi(wtyczka1DialogBase)
         self.button_box.accepted.connect(wtyczka1DialogBase.accept) # type: ignore
@@ -29,3 +35,5 @@ class Ui_wtyczka1DialogBase(object):
     def retranslateUi(self, wtyczka1DialogBase):
         _translate = QtCore.QCoreApplication.translate
         wtyczka1DialogBase.setWindowTitle(_translate("wtyczka1DialogBase", "projekt2"))
+        self.label.setText(_translate("wtyczka1DialogBase", "Wybierz warstwę:"))
+from qgsmaplayercombobox import QgsMapLayerComboBox
