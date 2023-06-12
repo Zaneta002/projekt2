@@ -14,12 +14,28 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_wtyczka1DialogBase(object):
     def setupUi(self, wtyczka1DialogBase):
         wtyczka1DialogBase.setObjectName("wtyczka1DialogBase")
-        wtyczka1DialogBase.resize(400, 300)
+        wtyczka1DialogBase.resize(564, 491)
         self.button_box = QtWidgets.QDialogButtonBox(wtyczka1DialogBase)
-        self.button_box.setGeometry(QtCore.QRect(30, 240, 341, 32))
+        self.button_box.setGeometry(QtCore.QRect(190, 420, 341, 32))
         self.button_box.setOrientation(QtCore.Qt.Horizontal)
         self.button_box.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.button_box.setObjectName("button_box")
+        self.mMapLayerComboBox = QgsMapLayerComboBox(wtyczka1DialogBase)
+        self.mMapLayerComboBox.setGeometry(QtCore.QRect(70, 90, 281, 31))
+        self.mMapLayerComboBox.setObjectName("mMapLayerComboBox")
+        self.label_wybierz_warstwe = QtWidgets.QLabel(wtyczka1DialogBase)
+        self.label_wybierz_warstwe.setGeometry(QtCore.QRect(70, 60, 161, 16))
+        self.label_wybierz_warstwe.setObjectName("label_wybierz_warstwe")
+        self.pushButton_roznicawys = QtWidgets.QPushButton(wtyczka1DialogBase)
+        self.pushButton_roznicawys.setGeometry(QtCore.QRect(70, 150, 131, 28))
+        self.pushButton_roznicawys.setObjectName("pushButton_roznicawys")
+        self.pushButton_2_polepow = QtWidgets.QPushButton(wtyczka1DialogBase)
+        self.pushButton_2_polepow.setGeometry(QtCore.QRect(70, 190, 131, 28))
+        self.pushButton_2_polepow.setObjectName("pushButton_2_polepow")
+        self.label_2_wynik = QtWidgets.QLabel(wtyczka1DialogBase)
+        self.label_2_wynik.setGeometry(QtCore.QRect(70, 250, 141, 31))
+        self.label_2_wynik.setText("")
+        self.label_2_wynik.setObjectName("label_2_wynik")
 
         self.retranslateUi(wtyczka1DialogBase)
         self.button_box.accepted.connect(wtyczka1DialogBase.accept) # type: ignore
@@ -29,3 +45,7 @@ class Ui_wtyczka1DialogBase(object):
     def retranslateUi(self, wtyczka1DialogBase):
         _translate = QtCore.QCoreApplication.translate
         wtyczka1DialogBase.setWindowTitle(_translate("wtyczka1DialogBase", "projekt2"))
+        self.label_wybierz_warstwe.setText(_translate("wtyczka1DialogBase", "Wybierz warstwę:"))
+        self.pushButton_roznicawys.setText(_translate("wtyczka1DialogBase", "Różnica wysokości"))
+        self.pushButton_2_polepow.setText(_translate("wtyczka1DialogBase", "Pole powierzchni"))
+from qgsmaplayercombobox import QgsMapLayerComboBox
