@@ -103,8 +103,8 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                     X = list(X)[::-1]
                     Y = list(Y)[::-1]
             
-                pole = 0.5 * np.abs(np.dot(X, np.roll(Y, 1)) - np.dot(Y, np.roll(X, 1)))
+                p = 0.5 * np.abs(np.dot(X, np.roll(Y, 1)) - np.dot(Y, np.roll(X, 1)))
                 numery_punktow = ' '.join(str(nr) for nr in numery)
-                self.label_2_wynik.setText(f'Pole powierzchni między punktami\n {numery_punktow} wynosi:\n {pole:.3f} m^2')
+                self.label_2_wynik.setText(f'Pole powierzchni między punktami\n {numery_punktow} wynosi:\n {p:.3f} m^2')
             else:
                 self.label_2_wynik.setText('Błąd: Nie wybrano wystarczającej liczby punktów.')
