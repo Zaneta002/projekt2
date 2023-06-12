@@ -22,12 +22,13 @@
  ***************************************************************************/
 """
 
-import numpy as np
+
 import os
 
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 from qgis.utils import iface 
+import numpy as np
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
@@ -63,7 +64,7 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                 numery.append(numer)
         
             przewyzszenie = wysokosci[1] - wysokosci[0]
-            self.label_wynik.setText(f'Przewyższenie między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
+            self.label_wynik.setText(f'Różnica wysokosci między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
         else:
             self.label_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
 
