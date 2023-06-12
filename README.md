@@ -38,4 +38,4 @@ W celu obliczenia pola powierzchni należy:
 Wówczas otrzymujemy wynik obliczeń pola powierzchni z dokładnością do trzech miejsc po przecinku. 
 
 ## Znane błędy
-Jeśli użytkownik poda złą ilość punktów, to program zwróci wiadomość o błędzie: `Nieodpowiednia ilość punktów`.
+Jeśli użytkownik poda złą ilość punktów, to program zwróci wiadomość o błędzie: `Nieodpowiednia ilość punktów`
