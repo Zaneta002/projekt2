@@ -27,7 +27,7 @@ import os
 
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
-#from qgis.utils import iface 
+from qgis.utils import iface 
 import numpy as np
 
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
