@@ -23,11 +23,6 @@ class Ui_wtyczka1DialogBase(object):
         self.mMapLayerComboBox = QgsMapLayerComboBox(wtyczka1DialogBase)
         self.mMapLayerComboBox.setGeometry(QtCore.QRect(70, 90, 281, 31))
         self.mMapLayerComboBox.setObjectName("mMapLayerComboBox")
-<<<<<<< HEAD
-        self.label = QtWidgets.QLabel(wtyczka1DialogBase)
-        self.label.setGeometry(QtCore.QRect(70, 60, 161, 16))
-        self.label.setObjectName("label")
-=======
         self.label_wybierz_warstwe = QtWidgets.QLabel(wtyczka1DialogBase)
         self.label_wybierz_warstwe.setGeometry(QtCore.QRect(70, 60, 161, 16))
         self.label_wybierz_warstwe.setObjectName("label_wybierz_warstwe")
@@ -41,7 +36,6 @@ class Ui_wtyczka1DialogBase(object):
         self.label_2_wynik.setGeometry(QtCore.QRect(70, 250, 141, 31))
         self.label_2_wynik.setText("")
         self.label_2_wynik.setObjectName("label_2_wynik")
->>>>>>> f45209df2fe3867a48fbd327a2df1004acb3faf1
 
         self.retranslateUi(wtyczka1DialogBase)
         self.button_box.accepted.connect(wtyczka1DialogBase.accept) # type: ignore
@@ -51,11 +45,7 @@ class Ui_wtyczka1DialogBase(object):
     def retranslateUi(self, wtyczka1DialogBase):
         _translate = QtCore.QCoreApplication.translate
         wtyczka1DialogBase.setWindowTitle(_translate("wtyczka1DialogBase", "projekt2"))
-<<<<<<< HEAD
-        self.label.setText(_translate("wtyczka1DialogBase", "Wybierz warstwę:"))
-=======
         self.label_wybierz_warstwe.setText(_translate("wtyczka1DialogBase", "Wybierz warstwę:"))
         self.pushButton_roznicawys.setText(_translate("wtyczka1DialogBase", "Różnica wysokości"))
         self.pushButton_2_polepow.setText(_translate("wtyczka1DialogBase", "Pole powierzchni"))
->>>>>>> f45209df2fe3867a48fbd327a2df1004acb3faf1
 from qgsmaplayercombobox import QgsMapLayerComboBox

@@ -22,13 +22,13 @@
  ***************************************************************************/
 """
 
-import numpy as np
+
 import os
 
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 from qgis.utils import iface 
-
+import numpy as np
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'wtyczka_1_dialog_base.ui'))
@@ -45,10 +45,10 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
         self.pushButton_roznicawys.clicked.connect(self.roznica_wys)
-        self.pushButton_polepow.clicked.connect(self.pole)
+        self.pushButton_2_polepow.clicked.connect(self.pole)
 
     def roznica_wys(self):
-        wybrana_warstwa = self.mMapLayerComboBox_warstwa.currentLayer()
+        wybrana_warstwa = self.mMapLayerComboBox.currentLayer()
         liczba_punktow = len(wybrana_warstwa.selectedFeatures())
     
         if liczba_punktow == 2:
@@ -63,12 +63,12 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                 numery.append(numer)
         
             przewyzszenie = wysokosci[1] - wysokosci[0]
-            self.label_wynik.setText(f'Przewyższenie między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
+            self.label_2_wynik.setText(f'Przewyższenie między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
         else:
-            self.label_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
+            self.label_2_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
 
     def pole(self):
-        wybrana_warstwa = self.mMapLayerComboBox_warstwa.currentLayer()
+        wybrana_warstwa = self.mMapLayerComboBox.currentLayer()
         liczba_punktow = wybrana_warstwa.featureCount()
     
         if liczba_punktow >= 3:
