@@ -46,6 +46,10 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
         self.pushButton_roznicawys.clicked.connect(self.roznica_wys)
+<<<<<<< HEAD
+=======
+
+>>>>>>> aac66eb6585923a7ba4b0697b4d9ee54564da330
         self.pushButton_2_polepow.clicked.connect(self.pole)
   
        
@@ -64,8 +68,13 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                 wysokosci.append(wysokosc)
                 numery.append(numer)
         
+
+            przewyzszenie = wysokosci[1] - wysokosci[0]
+            self.label_2_wynik.setText(f'Przewyższenie między punktami:\n {numery[0]} i {numery[1]} wynosi\n {przewyzszenie:.3f} m')
+
             roznica = wysokosci[1] - wysokosci[0]
             self.label_2_wynik.setText(f'Różnica wysokosci między punktami:\n {numery[0]} i {numery[1]} wynosi\n {roznica:.3f} m')
+
         else:
             self.label_2_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
 
@@ -97,8 +106,8 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
                     X = list(X)[::-1]
                     Y = list(Y)[::-1]
             
-                pole = 0.5 * np.abs(np.dot(X, np.roll(Y, 1)) - np.dot(Y, np.roll(X, 1)))
+                p = 0.5 * np.abs(np.dot(X, np.roll(Y, 1)) - np.dot(Y, np.roll(X, 1)))
                 numery_punktow = ' '.join(str(nr) for nr in numery)
-                self.label_2_wynik.setText(f'Pole powierzchni między punktami\n {numery_punktow} wynosi:\n {pole:.3f} m^2')
+                self.label_2_wynik.setText(f'Pole powierzchni między punktami\n {numery_punktow} wynosi:\n {p:.3f} m^2')
             else:
                 self.label_2_wynik.setText('Błąd: Nie wybrano wystarczającej liczby punktów.')
