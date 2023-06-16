@@ -46,11 +46,11 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
         self.pushButton_roznicawys.clicked.connect(self.roznica_wys)
-        self.pushButton_polepow.clicked.connect(self.pole)
+        self.pushButton_2_polepow.clicked.connect(self.pole)
   
        
     def roznica_wys(self):
-        wybrana_warstwa = self.mMapLayerComboBox_warstwa.currentLayer()
+        wybrana_warstwa = self.mMapLayerComboBox.currentLayer()
         liczba_punktow = len(wybrana_warstwa.selectedFeatures())
     
         if liczba_punktow == 2:
@@ -70,7 +70,7 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
             self.label_2_wynik.setText('Błąd: Niewłaściwa liczba punktów.')
 
     def pole(self):
-        wybrana_warstwa = self.mMapLayerComboBox_warstwa.currentLayer()
+        wybrana_warstwa = self.mMapLayerComboBox.currentLayer()
         liczba_punktow = wybrana_warstwa.featureCount()
     
         if liczba_punktow >= 3:
