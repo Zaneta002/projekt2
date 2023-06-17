@@ -46,10 +46,7 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
         self.pushButton_roznicawys.clicked.connect(self.roznica_wys)
-<<<<<<< HEAD
-=======
 
->>>>>>> aac66eb6585923a7ba4b0697b4d9ee54564da330
         self.pushButton_2_polepow.clicked.connect(self.pole)
   
        
