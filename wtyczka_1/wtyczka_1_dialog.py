@@ -88,8 +88,8 @@ class wtyczka1Dialog(QtWidgets.QDialog, FORM_CLASS):
             
                 for punkt in punkty:
                     numer = punkt["Nr"]
-                    x = float(punkt["X"])
-                    y = float(punkt["Y"])
+                    x = punkt.geometry().asPoint().x()
+                    y = punkt.geometry().asPoint().y()
                     wspolrzedne.append((x, y))
                     numery.append(numer)
             
